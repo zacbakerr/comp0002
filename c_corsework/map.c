@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int displayGrid(int tilesWide, int tilesTall) {
+void displayGrid(int tilesWide, int tilesTall) {
   setColour(gray);
   for (int i = 1; i < tilesWide + 1; i++) {
     for (int k = 1; k < tilesTall + 1; k++) {
@@ -13,7 +13,7 @@ int displayGrid(int tilesWide, int tilesTall) {
   }
 }
 
-int displayBorder(int tilesWide, int tilesTall) {
+void displayBorder(int tilesWide, int tilesTall) {
   setColour(red);
   fillRect(20, 20, 50 * (tilesWide+1), 40);
   fillRect(20, 20, 40, 50 * (tilesTall+1));

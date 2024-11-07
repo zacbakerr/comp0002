@@ -1,3 +1,6 @@
+#ifndef ROBOT_H
+#define ROBOT_H
+
 struct Robot
 {
   int x;
@@ -15,3 +18,4 @@ void pickUpMarker(struct Robot *robot, int board[20][12]);
 void dropMarker(struct Robot *robot, int board[20][12]);
 int markerCount(struct Robot *robot);
 
+#endif

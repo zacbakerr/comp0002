@@ -1,3 +1,6 @@
+#ifndef MAP_H
+#define MAP_H
+
 struct Board {
   int tilesWide;
   int tilesTall;
@@ -13,3 +16,4 @@ void clearMarker(int x, int y);
 void displayWall(int x, int y);
 
 struct Board createBoard(void);
+#endif
