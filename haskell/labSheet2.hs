@@ -1,3 +1,5 @@
+import Data.Char (toUpper, toLower)
+
 inRange :: Int -> Int -> [Int] -> [Int]
 inRange s e [] = []
 inRange s e (x:xs)
@@ -9,6 +11,21 @@ countPositives [] = 0
 countPositives (x:xs)
   | x > 0 = 1 + countPositives xs
   | otherwise = countPositives xs
+
+lowered :: String -> String
+lowered [] = []
+lowered (x:xs) = [toLower x] ++ lowered xs
+
+capitalized :: String -> String
+capitalized [] = []
+capitalized [x] = [toUpper x]
+capitalized (x:xs) = [toUpper x] ++ lowered xs
+
+title :: [String] -> [String]
+title [] = []
+title (x:xs)
+  | length x > 3 = capitalized x : title xs
+  | otherwise = lowered x : title xs
 
 insert :: Ord a => a -> [a] -> [a]
 insert x [] = [x]
